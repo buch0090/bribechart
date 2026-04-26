@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
     const today = getToday();
 
     // Check for duplicate
-    const logs = getLogs();
+    const logs = await getLogs();
     const duplicate = logs.find(
       l => l.kid_name === kid_name && l.chore_id === chore_id && l.date === today && l.status === 'done'
     );

@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       getRows('Kids'),
       getRows('Chores'),
     ]);
-    const logs = getLogs();
+    const logs = await getLogs();
 
     const leaderboard = kids.map(kid => {
       const kidChores = chores.filter(c => {

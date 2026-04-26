@@ -7,8 +7,10 @@ const { calculateProgress } = require('../utils/streaks');
 router.get('/:kid', async (req, res) => {
   try {
     const kidName = req.params.kid;
-    const chores = await getRows('Chores');
-    const logs = getLogs();
+    const [chores, logs] = await Promise.all([
+      getRows('Chores'),
+      getLogs(),
+    ]);
 
     // Filter chores assigned to this kid
     const kidChores = chores.filter(c => {

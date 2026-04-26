@@ -14,6 +14,7 @@ app.use('/api/kids', require('./routes/kids'));
 app.use('/api/chores', require('./routes/chores'));
 app.use('/api/checkin', require('./routes/checkin'));
 app.use('/api/leaderboard', require('./routes/leaderboard'));
+app.use('/api/parents', require('./routes/parents'));
 
 // Serve static frontend
 const distPath = path.join(__dirname, '../client/dist');

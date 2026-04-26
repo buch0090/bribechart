@@ -69,24 +69,43 @@ export default function Home() {
         ))}
       </div>
 
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        onClick={() => navigate('/leaderboard')}
-        style={{
-          marginTop: 40,
-          background: 'linear-gradient(135deg, #FFD43B, #FF922B)',
-          color: 'white',
-          padding: '14px 32px',
-          borderRadius: 50,
-          fontSize: '1.1rem',
-          fontWeight: 600,
-          boxShadow: '0 4px 15px rgba(255, 146, 43, 0.3)',
-        }}
-      >
-        🏆 Leaderboard
-      </motion.button>
+      <div style={{ display: 'flex', gap: 12, marginTop: 40, flexWrap: 'wrap', justifyContent: 'center' }}>
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+          onClick={() => navigate('/leaderboard')}
+          style={{
+            background: 'linear-gradient(135deg, #FFD43B, #FF922B)',
+            color: 'white',
+            padding: '14px 32px',
+            borderRadius: 50,
+            fontSize: '1.1rem',
+            fontWeight: 600,
+            boxShadow: '0 4px 15px rgba(255, 146, 43, 0.3)',
+          }}
+        >
+          🏆 Leaderboard
+        </motion.button>
+
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          onClick={() => navigate('/parent/login')}
+          style={{
+            background: 'linear-gradient(135deg, #CC5DE8, #9775FA)',
+            color: 'white',
+            padding: '14px 32px',
+            borderRadius: 50,
+            fontSize: '1.1rem',
+            fontWeight: 600,
+            boxShadow: '0 4px 15px rgba(204, 93, 232, 0.3)',
+          }}
+        >
+          🔐 Parent View
+        </motion.button>
+      </div>
     </motion.div>
   );
 }

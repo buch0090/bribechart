@@ -39,3 +39,26 @@ export async function fetchLeaderboard() {
   if (!res.ok) throw new Error('Failed to load leaderboard');
   return res.json();
 }
+
+export async function fetchParents() {
+  const res = await fetch(`${BASE}/parents`);
+  if (!res.ok) throw new Error('Failed to load parents');
+  return res.json();
+}
+
+export async function parentLogin(name, pin) {
+  const res = await fetch(`${BASE}/parents/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, pin }),
+  });
+  if (res.status === 401) throw new Error('Wrong PIN!');
+  if (!res.ok) throw new Error('Login failed');
+  return res.json();
+}
+
+export async function fetchParentDashboard() {
+  const res = await fetch(`${BASE}/parents/dashboard`);
+  if (!res.ok) throw new Error('Failed to load dashboard');
+  return res.json();
+}
